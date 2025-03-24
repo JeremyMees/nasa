@@ -12,14 +12,16 @@ interface APODResponse {
   copyright?: string
 }
 
-export function useAPOD() {
+export function useAPOD(options: ComputedRef<{ date: string }>) {
   const key = useRuntimeConfig().public.nasaApiKey
 
+  console.log(options.value)
+
   return useQuery({
-    queryKey: ['useAPOD'],
+    queryKey: ['useAPOD', options.value.date],
     queryFn: async () => {
       try {
-        return await $fetch<APODResponse>(`https://api.nasa.gov/planetary/apod?api_key=${key}&date=2025-03-23&thumbs=true`)
+        return await $fetch<APODResponse>(`https://api.nasa.gov/planetary/apod?api_key=${key}&date=${options.value.date}&thumbs=true`)
       }
       catch (error) {
         console.error(error)
