@@ -11,14 +11,14 @@ const { data } = useAPOD()
       {{ data?.date }}
     </p>
 
-    <UiCard class="overflow-hidden lg:flex">
+    <UiCard class="overflow-hidden max-w-[1000px] mx-auto">
       <NuxtImg
         v-if="data?.url || data?.thumbnail_url"
         :src="data?.url || data?.thumbnail_url"
-        class="w-full"
+        class="w-full aspect-video"
       />
       <div v-else class="w-full aspect-video bg-muted" />
-      <UiCardHeader>
+      <UiCardHeader class="min-w-[200px]">
         <UiCardTitle>{{ data?.title }}</UiCardTitle>
         <div
           v-if="data?.copyright"
