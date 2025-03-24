@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     'shadcn-nuxt',
     '@nuxt/icon',
+    '@nuxtjs/color-mode',
   ],
 
   imports: { dirs: ['queries/*.ts'] },
