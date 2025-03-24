@@ -6,6 +6,9 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/image',
   ],
+
+  imports: { dirs: ['queries/*.ts'] },
+
   devtools: { enabled: true },
 
   css: ['~/assets/css/main.css'],
