@@ -1,6 +1,8 @@
 <script setup lang="ts">
 const menuItems = [
+  { label: 'Dashboard', href: '/', icon: 'tabler:layout-grid' },
   { label: 'Mars Weather', href: '/mars-weather', icon: 'tabler:temperature' },
+  { label: 'Mars Rover Photos', href: '/mars-rover', icon: 'tabler:camera' },
   { label: 'Near Earth Objects', href: '/neows', icon: 'tabler:meteor' },
 ]
 </script>
@@ -22,37 +24,24 @@ const menuItems = [
           </span>
         </NuxtLink>
       </div>
-      <div class="hidden md:flex items-center gap-3">
-        <NuxtLink
-          v-for="item in menuItems"
-          :key="item.href"
-          :to="item.href"
-          class="flex items-center gap-1 group"
-        >
-          <Icon
-            :name="item.icon"
-            class="size-4"
-          />
-          <span class="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
-            {{ item.label }}
-          </span>
-        </NuxtLink>
-      </div>
       <UiDropdownMenu>
-        <UiDropdownMenuTrigger
-          as-child
-          class="md:hidden"
-        >
-          <UiButton size="icon">
+        <UiDropdownMenuTrigger as-child>
+          <UiButton
+            size="icon"
+            variant="outline"
+          >
             <Icon
               name="tabler:menu-2"
               class="size-4"
             />
           </UiButton>
         </UiDropdownMenuTrigger>
-        <UiDropdownMenuContent>
+        <UiDropdownMenuContent
+          align="end"
+          side="bottom"
+        >
           <UiDropdownMenuItem
-            v-for="item in [{ label: 'Dashboard', href: '/', icon: 'tabler:layout-grid' }, ...menuItems]"
+            v-for="item in menuItems"
             :key="item.href"
           >
             <NuxtLink
