@@ -34,12 +34,28 @@ const latestSolData = computed(() => {
     <UiCardContent class="pt-6 grow">
       <div
         v-if="isPending"
-        class="flex justify-center items-center py-6"
+        class="space-y-4"
       >
-        <Icon
-          name="tabler:loader-2"
-          class="size-8 animate-spin"
-        />
+        <div class="flex justify-between items-center">
+          <UiSkeleton class="h-5 w-20" />
+          <UiSkeleton class="h-4 w-24" />
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div class="border rounded-lg p-3">
+            <div class="text-sm font-medium mb-1">
+              Temperature
+            </div>
+            <UiSkeleton class="h-7 w-16" />
+          </div>
+
+          <div class="border rounded-lg p-3">
+            <div class="text-sm font-medium mb-1">
+              Wind
+            </div>
+            <UiSkeleton class="h-7 w-16" />
+          </div>
+        </div>
       </div>
       <div
         v-else-if="!latestSolData"

@@ -16,7 +16,7 @@
       </UiCardDescription>
     </UiCardHeader>
     <UiCardContent class="pt-6 grow">
-      <div class="flex justify-center items-center py-6">
+      <div class="flex justify-center items-center py-6 h-full">
         <div class="relative">
           <div class="size-20 rounded-full bg-muted flex items-center justify-center">
             <div class="size-4 rounded-full bg-primary animate-pulse" />

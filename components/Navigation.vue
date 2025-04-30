@@ -18,12 +18,31 @@ const menuItems = [
             class="size-6"
           />
           <span class="text-xl font-bold">
-            Nasa
+            NASA
+          </span>
+        </NuxtLink>
+      </div>
+      <div class="hidden md:flex items-center gap-3">
+        <NuxtLink
+          v-for="item in menuItems"
+          :key="item.href"
+          :to="item.href"
+          class="flex items-center gap-1 group"
+        >
+          <Icon
+            :name="item.icon"
+            class="size-4"
+          />
+          <span class="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+            {{ item.label }}
           </span>
         </NuxtLink>
       </div>
       <UiDropdownMenu>
-        <UiDropdownMenuTrigger>
+        <UiDropdownMenuTrigger
+          as-child
+          class="md:hidden"
+        >
           <UiButton size="icon">
             <Icon
               name="tabler:menu-2"
@@ -33,7 +52,7 @@ const menuItems = [
         </UiDropdownMenuTrigger>
         <UiDropdownMenuContent>
           <UiDropdownMenuItem
-            v-for="item in menuItems"
+            v-for="item in [{ label: 'Dashboard', href: '/', icon: 'tabler:layout-grid' }, ...menuItems]"
             :key="item.href"
           >
             <NuxtLink
