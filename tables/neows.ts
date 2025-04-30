@@ -32,14 +32,3 @@ export function generateColumns() {
     }),
   ]
 }
-
-// export function expandedMarkup(row: Row<NoteRow>) {
-//   return h('div', {
-//     class: 'html-richtext max-h-[350px] sm:max-h-[600px] overflow-y-auto',
-//     innerHTML: row.original.text,
-//   })
-// }
-
-// export const initialState: InitialTableState = {
-//   sorting: [{ id: 'created_at', desc: true }],
-// }

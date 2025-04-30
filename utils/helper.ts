@@ -19,3 +19,7 @@ export function getUnitAbbreviation(unit: string) {
   }
   return abbreviation
 }
+
+export function celsiusToFahrenheit(celsius: number): number {
+  return (celsius * 9 / 5) + 32
+}

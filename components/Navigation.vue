@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const menuItems = [
-  { label: 'Daily Astronomy Picture', href: '/apod', icon: 'tabler:photo' },
+  { label: 'Mars Weather', href: '/mars-weather', icon: 'tabler:temperature' },
   { label: 'Near Earth Objects', href: '/neows', icon: 'tabler:meteor' },
 ]
 </script>
